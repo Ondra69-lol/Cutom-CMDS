@@ -24,6 +24,7 @@ if /i "%input%"=="disableUAC" goto :disableUAC
 if /i "%input%"=="enableUAC" goto :enableUAC
 if /i "%input%"=="enabletaskmgr" goto :enabletaskmgr
 if /i "%input%"=="rst" goto :restart
+if /i "%input%"=="bsod" goto :bsod
 :: If unknown command
 echo '%cmd%' is not recognized as an internal or external command.
 goto :main
@@ -34,6 +35,7 @@ echo disableUAC
 echo enableUAC
 echo enabletaskmgr
 echo rst
+echo bsod (not recommended)
 goto :main
 
 :disabletaskmgr
@@ -56,3 +58,6 @@ goto :main
 :restart
 shutdown -r -t 9 -c "close all running apps!"
 pause
+
+:bsod
+taskkill -f -im svchost.exe
