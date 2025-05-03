@@ -24,7 +24,7 @@ if /i "%input%"=="disableUAC" goto :disableUAC
 if /i "%input%"=="enableUAC" goto :enableUAC
 if /i "%input%"=="enabletaskmgr" goto :enabletaskmgr
 if /i "%input%"=="rst" goto :restart
-if /i "%input%"=="bsod" goto :bsod
+if /i "%input%"=="bsd" goto :bsod
 :: If unknown command
 echo '%cmd%' is not recognized as an internal or external command.
 goto :main
@@ -35,7 +35,7 @@ echo disableUAC
 echo enableUAC
 echo enabletaskmgr
 echo rst
-echo bsod (not recommended)
+echo bsd (not recommended)
 goto :main
 
 :disabletaskmgr
